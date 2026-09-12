@@ -5,11 +5,11 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
       "version": "latest",
-      "helm": "latest",
+      "helm": "none",
       "minikube": "latest"
     }
   },
-  "postCreateCommand": "minikube start --driver=docker --container-runtime=docker",
+  "postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash && minikube start --driver=docker --container-runtime=docker",
   "customizations": {
     "vscode": {
       "extensions": [
